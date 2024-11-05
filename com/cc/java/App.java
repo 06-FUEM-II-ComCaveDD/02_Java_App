@@ -1,8 +1,12 @@
 package com.cc.java;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+// import java.sql.Connection;
+// import java.sql.DriverManager;
+// import java.sql.ResultSet;
+// import java.sql.Statement;
+
+import java.sql.*;
+
 
 public class App 
 {
@@ -12,9 +16,8 @@ public class App
     static String usrPwd = "pass@remote";
 
     static Connection con;
-    // static Statement stmt;
+    static Statement stmt;
     static ResultSet rs;
-
 
     public static void main(String[] args) {
         
@@ -26,7 +29,20 @@ public class App
         try (Connection con = DriverManager.getConnection(conURL, usrStr, usrPwd)) {
 
             System.out.println("Success!");  
+            System.out.println(con);
 
+             // Creating a statement object
+             Statement stmt = con.createStatement();
+
+             // Executing the query and storing the result in a ResultSet object
+             ResultSet rs = stmt.executeQuery("SELECT * FROM mydb.employees");
+             System.out.println(rs);
+
+             
+
+
+
+         
             
         } catch (Exception e) {
             e.printStackTrace();
