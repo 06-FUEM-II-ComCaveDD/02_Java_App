@@ -19,15 +19,12 @@ public class App
         
       try {
         
-          // Load SQL Server JDBC driver and establish connection.
-          System.out.print("Connecting to SQL Server ... ");
+        // Load SQL Server JDBC driver and establish connection.
+        System.out.print("Connecting to SQL Server ... ");
 
 
       } catch (Exception e) {
-
-        // TODO: handle exception
-
-
+        e.printStackTrace();
       }
 
 
