@@ -1,6 +1,7 @@
 package com.cc.java;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 
 public class App 
@@ -22,6 +23,14 @@ public class App
         // Load SQL Server JDBC driver and establish connection.
         System.out.print("Connecting to SQL Server ... ");
 
+        try (Connection con = DriverManager.getConnection(conURL, usrStr, usrPwd)) {
+
+            System.out.println("Success!");  
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
       } catch (Exception e) {
         e.printStackTrace();
