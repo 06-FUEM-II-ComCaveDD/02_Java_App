@@ -53,13 +53,14 @@ public class App
                                     ", Name: " + surname + " " + name +
                                     ", Salary: " + salary +
                                     ", Age: " + age;
-                                    
+
                 System.out.println(printStr);
             }
 
-
-
-
+            // Objekte schließen
+            rs.close();
+            stmt.close();
+            con.close();
          
             
         } catch (Exception e) {
